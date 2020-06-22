@@ -103,6 +103,7 @@ public class Calendar {
 	 * the mock-up given). Need to gather startDay and getNumDaysInMonth. I will need to use a for loop of
 	 * some kind to set up the calendar body and account for spacing as above. Possibly will need to account
 	 * for spacing based on when the month starts, and the digit of the day.
+	 * Struggled ask about this part.
 	 */
 	public static void printMonthBody(int month, int year) {
 		int day = 0;
@@ -199,11 +200,9 @@ public class Calendar {
 	/**
 	 * Returns true if the specified year is a leap year, and returns false otherwise. Make sure
 	 * to ask about this part.
-	 * https://www.educba.com/leap-year-program-in-java/
-	 * https://www.knowprogram.com/java/leap-year-program-in-java/
 	 */
 	public static boolean isLeapYear(int year) {
-		return (((year % 400 == 0) && (year % 100 != 0)) || (year % 4 == 0));
+		return ((year % 400 == 0) || (year % 100 == 0) || (year % 4 == 0));
 	}
 
 	/**
