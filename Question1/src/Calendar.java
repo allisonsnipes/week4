@@ -93,9 +93,11 @@ public class Calendar {
 	 * space the calendar columns evenly.
 	 */
 	public static void printMonthHeader(int month, int year) {
-		System.out.println("\t" + getMonthName(month) + "    " + year);
+		System.out.println("\n");
 		System.out.println("---------------------------------");
-		System.out.println("Sun" + " " + "Mon" + " " + "Tue" + " " + "Wed" + " " + "Thu" + " " + "Fri" + " " + "Sat");
+		System.out.println("-         " + getMonthName(month) + "     " + year + "        -");
+		System.out.println("---------------------------------");
+		System.out.println(" Sun Mon Tue Wed Thu Fri Sat");
 	}
 
 	/**
@@ -104,33 +106,29 @@ public class Calendar {
 	 * some kind to set up the calendar body and account for spacing as above. Possibly will need to account
 	 * for spacing based on when the month starts, and the digit of the day.
 	 * Struggled ask about this part.
+	 * 
+	 * https://www.baeldung.com/java-printstream-printf
 	 */
 	public static void printMonthBody(int month, int year) {
-		int day = 0;
+		int day = 1;
 		
-		int startDay = getStartDay(month, day, year);
+		int startDay = getStartDay(month, 1, year);
 		
 		int numDays = getNumDaysInMonth(month, year);
 		
-		// makes a new space when the month starts when the startDay is 0.
+		// makes a new space when the month starts when the startDay is 1.
 		for (int i = 0; i < startDay; i++ ) {
-			System.out.print("   ");
+			System.out.print("    ");
 		}
 		
 		// need to account for spacing based on the the digit of the day start at 1.
 		for ( int i = 1; i <= numDays; i++) {
-			if (i < 10) {
-				System.out.print("   " + i);
-				
-			} else {
-				System.out.print("  " + i);
-	
-			}
+			System.out.printf("%4d", i);
+			
 			//print a whole new line once its out of the days of the week
-			if ((i + startDay) % 7 == 0) {
-				System.out.println();
+			if ((startDay + i) % 7 == 0) {
+				System.out.println("\n");
 			}
-			System.out.println();
 		}
 	}
 
