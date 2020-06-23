@@ -43,6 +43,23 @@ public class Calendar {
 		printMonthCalendar(month, year);
 
 	}
+	
+	/**
+	 * This will display my welcome message to my users. This should be the first
+	 * thing that the user should see when they run the application.
+	 */
+	public static void StartMsg() {
+		System.out.println("\n");
+		System.out.println("+----------------------------------------------------+");
+		System.out.println("|                     Hello User!                     |");
+		System.out.println("|   Please start by entering a number either 1 - 12   |");
+		System.out.println("|    to display a month. Next, enter a four number    |");
+		System.out.println("|        year (i.e. 2014). You must always make       |");
+		System.out.println("|     sure you are typing in a valid selection.       |");
+		System.out.println("|             Are you ready? Let's begin!             |");
+		System.out.println("+----------------------------------------------------+");
+		System.out.println("\n");
+	}
 
 	/**
 	 * This method will displays a calendar similar to the mock up given, however
@@ -233,22 +250,5 @@ public class Calendar {
 		int dayNum = ((h + 5) % 7) + 1;
 
 		return dayNum;
-	}
-
-	/**
-	 * This will display my welcome message to my users. This should be the first
-	 * thing that the user should see when they run the application.
-	 */
-	public static void StartMsg() {
-		System.out.println("\n");
-		System.out.println("+----------------------------------------------------+");
-		System.out.println("|                     Hello User!                     |");
-		System.out.println("|   Please start by entering a number either 1 - 12   |");
-		System.out.println("|    to display a month. Next, enter a four number    |");
-		System.out.println("|        year (i.e. 2014). You must always make       |");
-		System.out.println("|     sure you are typing in a valid selection.       |");
-		System.out.println("|             Are you ready? Let's begin!             |");
-		System.out.println("+----------------------------------------------------+");
-		System.out.println("\n");
 	}
 }
